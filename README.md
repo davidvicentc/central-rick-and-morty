@@ -1,34 +1,40 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Central rick and morty
 
-## Getting Started
+Este es un sistema hecho en Next.js que lista los episodios y personajes de la popular serie de televisión "Rick and Morty". El sistema utiliza la API pública de Rick and Morty para obtener los datos y mostrarlos en la interfaz del usuario.
 
-First, run the development server:
+## Instalación
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Para instalar el sistema, asegúrate de tener Node.js y npm instalados en tu computadora. Luego, sigue estos pasos:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clona este repositorio en tu computadora:
+   ```
+   git clone https://github.com/davidvicentc/central-rick-and-morty
+   ```
+2. Ingresa a la carpeta del proyecto:
+   ```
+   cd central-rick-and-morty
+   ```
+3. Instala las dependencias del proyecto:
+   ```
+   npm install
+   ```
+4. Ejecuta el sistema:
+   ```
+   npm run dev
+   ```
+   El sistema debería estar disponible en `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Uso
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Una vez que hayas iniciado el sistema, podrás ver una lista de episodios en la página de inicio. Puedes hacer clic en un episodio para ver más detalles sobre él, incluyendo una lista de personajes que aparecen en ese episodio.
 
-## Learn More
+En la página de personajes, puedes buscar personajes por nombre y filtrarlos por género, tipo, nombre y especie. También puedes hacer clic en un personaje para ver más detalles sobre él.
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologías utilizadas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Este sistema utiliza las siguientes tecnologías:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js: un framework de React para aplicaciones web.
+- React: una biblioteca de JavaScript para construir interfaces de usuario.
+- Tailwind CSS: un framework de CSS para diseñar interfaces de usuario.
+- Shadcn: es un conjunto de componentes de interfaz de usuario (UI) de código abierto para React.
