@@ -86,7 +86,6 @@ export default function AuthenticationPage() {
     };
     login(tokens);
 
-    return router.push("/admin");
   };
   const onChange = (e) => {
     const { name, value } = e.target

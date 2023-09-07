@@ -2,7 +2,6 @@
 
 import { redirect } from "next/navigation";
 import { useAuthContext } from "@/contexts/authContexts";
-import { ReactNode } from "react";
 import Sidebar from "@/components/Sidebar";
 
 function Layout({ children }) {

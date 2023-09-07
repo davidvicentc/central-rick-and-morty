@@ -71,19 +71,11 @@ const Sidebar = ({ open = false, children }) => {
           <ul className="space-y-2 font-medium">
             <li>
               <Link
-                href="/admin/dashboard"
-                className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
-              >
-                <span className="ml-3">Rick and morty</span>
-              </Link>
-            </li>
-            <li>
-              <a
-                href="#"
+                href="/admin/episodios"
                 className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
               >
                 <span className="ml-3">Episodios</span>
-              </a>
+              </Link>
             </li>
             <li>
               <a
