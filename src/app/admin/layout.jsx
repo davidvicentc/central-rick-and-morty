@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { useAuthContext } from "@/contexts/authContexts";
 import { ReactNode } from "react";
+import Sidebar from "@/components/Sidebar";
 
 function Layout({ children }) {
   const { isLoggedIn } = useAuthContext();
@@ -11,7 +12,12 @@ function Layout({ children }) {
     redirect("/login");
   }
 
-  return <div>{children}</div>;
+  return <div>
+    <Sidebar>
+    {children}
+    </Sidebar>
+    
+  </div>;
 }
 
 export default Layout;

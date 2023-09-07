@@ -107,10 +107,10 @@ export default function AuthenticationPage() {
           </div>
           
         </div>
-        <div className="lg:p-8 flex items-center m-4">
-          <div className="mx-auto flex w-full flex-col justify-center space-y-6 w-[300px] sm:h-6">
+        <div className="lg:p-8 flex items-center h-full w-full justify-center">
+          <div className="flex flex-col space-y-6 w-[380px]">
             <div className="mx-auto mb-5">
-            <img src="/assets/image/logo.png" className="mr-2 lg:hidden w-[100px] h-[100px]" alt="" />
+              <img src="/assets/image/logo.png" className="mr-2 lg:hidden w-[100px] h-[100px]" alt="" />
             </div>
             <div className="flex flex-col space-y-2 text-center">
 
