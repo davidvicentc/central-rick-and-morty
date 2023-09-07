@@ -22,26 +22,28 @@ import {
 
 import { useEffect, useState } from "react";
 
-export default function EpisodiosPage() {
-  const [episodios, setEpisodios] = useState({
+export default function PersonajesPage() {
+  const [personajes, setPersonajes] = useState({
     info: {},
     results: [],
   });
 
-  
+    
 
-  const getEpisodios = async () => {
+  const getpersonajes = async () => {
+
     try {
-      const response = await fetch("https://rickandmortyapi.com/api/episode");
+      const response = await fetch("https://rickandmortyapi.com/api/character");
       const data = await response.json();
-      setEpisodios(data);
+      setPersonajes(data)
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
-    getEpisodios();
+    getpersonajes();
+
   }, []);
   return (
     <>
@@ -49,10 +51,10 @@ export default function EpisodiosPage() {
         <div className="flex items-center justify-between space-y-2">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
-              Episodios rick and morty!
+              personajes rick and morty!
             </h2>
             <p className="text-muted-foreground">
-              Lista de todos los episodios de rick y morty
+              Lista de todos los personajes de rick y morty
             </p>
           </div>
         </div>
@@ -62,18 +64,22 @@ export default function EpisodiosPage() {
           {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
           <TableHeader>
             <TableRow>
-              <TableHead className="w-[100px]">Episodio</TableHead>
-              <TableHead>Nombre de episodio</TableHead>
-              <TableHead>Fecha de lanzamiento</TableHead>
+              <TableHead className="w-[100px]">Nombre</TableHead>
+              <TableHead>Especie</TableHead>
+              <TableHead>Genero</TableHead>
+              <TableHead className="text-center">Tipo</TableHead>
+              <TableHead>Foto</TableHead>
               <TableHead className="text-right">Acciones</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {episodios.results.map((item) => (
+            {personajes.results.map((item, id) => (
               <TableRow key={item.id}>
-                <TableCell className="font-medium">{item.episode}</TableCell>
-                <TableCell>{ item.name }</TableCell>
-                <TableCell>{ item.air_date }</TableCell>
+                <TableCell className="font-medium">{item.name}</TableCell>
+                <TableCell>{ item.species }</TableCell>
+                <TableCell>{ item.gender }</TableCell>
+                <TableCell className="text-center">{ item.type === "" ?  'N/A' : item.type  }</TableCell>
+                <TableCell><img className="w-16 rounded-full	" src={ item.image } alt={item.name} /></TableCell>
                 <TableCell className="text-right">
                 <DropdownMenu>
                     <DropdownMenuTrigger>

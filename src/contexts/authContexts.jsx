@@ -10,6 +10,8 @@ import {
 } from "react";
 
 const AUTH_TOKENS_KEY = "NEXT_JS_AUTH";
+const PERSONAJE_KEY = 'PERSONAJES_LOCAL'
+
 
 export const AuthContext = createContext({
   login: (authTokens) => {},
@@ -33,6 +35,7 @@ export default function AuthContextProvider({children}) {
 
   const logout = useCallback(function () {
     window.localStorage.removeItem(AUTH_TOKENS_KEY);
+    window.localStorage.removeItem(PERSONAJE_KEY);
     setAuthTokens(null);
   }, []);
 
