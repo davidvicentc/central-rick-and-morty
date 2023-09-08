@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaPencilAlt } from "react-icons/fa";
 import { especies, generos } from "@/utils/constants";
+import { useToast } from "@/components/ui/use-toast"
 
 import {
   Dialog,
@@ -34,6 +35,7 @@ export default function ModalFormPersonaje({
   const [personaje, setPersonaje] = useState({
     ...item,
   });
+  const { toast } = useToast()
 
   const onChangeSelect = (value, name) => {
     setPersonaje({ ...personaje, [name]: value });
@@ -126,6 +128,9 @@ export default function ModalFormPersonaje({
             onClick={() => {
               handleSubmit(personaje);
               setShowModal(false);
+              toast({
+                description: "Se ha Guardado correctamente.",
+              })
             }}
           >
             Guardar

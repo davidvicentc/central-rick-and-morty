@@ -4,6 +4,8 @@ import { FaTimes } from "react-icons/fa";
 import { getLocalStorage, saveLocalStorage } from "@/utils/storage";
 import ModalFormPersonaje from "@/components/personajes/ModalFormPersonaje";
 import { especies, generos } from "@/utils/constants";
+import { Icons } from "@/components/icons";
+
 import {
   Table,
   TableBody,
@@ -86,7 +88,6 @@ export default function PersonajesPage() {
       setPersonajes(
         page == 1 || !urlPage ? getItemsForTable(data, filtros) : data
       );
-      
     } catch (error) {
       setPersonajes(getItemsForTable([], filtros));
       console.error(error);
@@ -134,7 +135,7 @@ export default function PersonajesPage() {
         <ModalFormPersonaje
           titulo="Crear personaje"
           descripcion="Agrega tu propio personaje a esta historia"
-          action='new'
+          action="new"
           item={{
             id: crypto.randomUUID(),
             name: "",
