@@ -7,7 +7,7 @@ function Layout({ children }) {
     const { isLoggedIn } = useAuthContext();
   
     if (isLoggedIn) {
-      redirect("/admin");
+      redirect("/admin/episodios");
     }
   
     return <>
