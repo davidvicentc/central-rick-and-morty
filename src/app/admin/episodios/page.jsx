@@ -45,14 +45,15 @@ export default function EpisodiosPage() {
     setParams({ ...params, [name]: value });
   };
 
-  const getEpisodios = async (filtros = {}) => {
+  const getEpisodios = async (filtros = {}, urlPage = null) => {
     const query =
       Object.keys(filtros).length > 0
         ? "?" + new URLSearchParams(filtros).toString()
         : "";
 
     try {
-      const response = await fetch(`${API_URL}${query}`);
+      const URL = urlPage ?? `${API_URL}${query}`;
+      const response = await fetch(URL);
       const data = await response.json();
       setEpisodios(data);
     } catch (error) {
@@ -111,7 +112,6 @@ export default function EpisodiosPage() {
               <TableHead className="w-[100px]">Episodio</TableHead>
               <TableHead>Nombre de episodio</TableHead>
               <TableHead>Fecha de lanzamiento</TableHead>
-              <TableHead className="text-right">Acciones</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -120,19 +120,6 @@ export default function EpisodiosPage() {
                 <TableCell className="font-medium">{item.episode}</TableCell>
                 <TableCell>{item.name}</TableCell>
                 <TableCell>{item.air_date}</TableCell>
-                <TableCell className="text-right">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger>
-                      <FaBars />
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuItem>Editar</DropdownMenuItem>
-                      <DropdownMenuSeparator />
-
-                      <DropdownMenuItem>Eliminar</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </TableCell>
               </TableRow>
             ))}
           </TableBody>
