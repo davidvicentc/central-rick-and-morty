@@ -1,6 +1,6 @@
 "use client";
 
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import { getLocalStorage, saveLocalStorage } from "@/utils/storage";
 import ModalFormPersonaje from "@/components/personajes/ModalFormPersonaje";
 import { especies, generos } from "@/utils/constants";
@@ -22,20 +22,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-
 import { useEffect, useState } from "react";
-import { randomUUID } from "crypto";
 
 export default function PersonajesPage() {
   const API_URL = "https://rickandmortyapi.com/api/character";
@@ -97,6 +86,7 @@ export default function PersonajesPage() {
       setPersonajes(
         page == 1 || !urlPage ? getItemsForTable(data, filtros) : data
       );
+      
     } catch (error) {
       setPersonajes(getItemsForTable([], filtros));
       console.error(error);
