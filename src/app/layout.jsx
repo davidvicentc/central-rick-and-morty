@@ -1,4 +1,5 @@
 import AuthContextProvider from "@/contexts/authContexts";
+import { Toaster } from "@/components/ui/toaster"
 
 import './globals.css'
 import { Inter } from 'next/font/google'
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
       <AuthContextProvider>{children}</AuthContextProvider>
+      <Toaster />
       </body>
     </html>
   )
